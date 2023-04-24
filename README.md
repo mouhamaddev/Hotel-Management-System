@@ -1,5 +1,3 @@
-# Hotel-Management-System
-
 This project is for my university project.
 ----
 
