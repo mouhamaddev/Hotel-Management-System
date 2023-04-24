@@ -19,7 +19,7 @@ Implementation:
 
 
 Contributors:
-Jana Saddik (Java Programming)
-Wadad zlikha (GUI Design)
-Bahaa Allouch (Database Management)
-Mohammad Massri (Project Lead, Documentation and Technical Writing)
+- Jana Saddik (Java Programming)
+- Wadad zlikha (GUI Design)
+- Bahaa Allouch (Database Management)
+- Mohammad Massri (Project Lead, Documentation and Technical Writing)
