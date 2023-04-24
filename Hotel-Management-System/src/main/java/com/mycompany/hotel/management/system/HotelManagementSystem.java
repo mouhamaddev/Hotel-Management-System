@@ -9,20 +9,16 @@ public class HotelManagementSystem {
 
     public static void main(String[] args) {
         try {
-            String conf = "C:\\Users\\winte\\Documents\\NetBeansProjects\\mavenproject1\\conf.properties";
+            String conf = "C:\\Users\\winte\\Documents\\github\\Hotel-Management-System\\Hotel-Management-System\\conf.properties";
             
             Properties prop = new Properties();
             FileInputStream fis = new FileInputStream(conf);
             prop.load(fis);
 
 
-            // WRITE CODE HERE
-            
-            //Get value of key0
-            //System.out.println(prop.getProperty("key0"));
+            System.out.println(prop.getProperty("key0"));
 
-            //Set value of key1
-            //prop.setProperty("key1", "value1");
+            prop.setProperty("key1", "value1");
 
             FileOutputStream fos = new FileOutputStream(conf);
             prop.store(fos, "Updated properties");
