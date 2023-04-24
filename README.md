@@ -1,4 +1,4 @@
-This project is for my university project.
+Hotel Management System a project is for my university.
 ----
 
 Course name: OOP
