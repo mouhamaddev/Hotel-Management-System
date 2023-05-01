@@ -68,6 +68,11 @@ public class Login extends javax.swing.JFrame {
 
         jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Staff" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,10 +125,21 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        Dashboard DashboardFrame = new Dashboard();
-        DashboardFrame.setVisible(true);  
+        Object selectedValue = jComboBox1.getSelectedItem();
         
-        setVisible(false);
+        if(selectedValue == "Admin")
+        {
+            System.out.println("go to admin");
+        }
+        else
+        {
+            Dashboard DashboardFrame = new Dashboard();
+            DashboardFrame.setVisible(true);  
+            setVisible(false);
+        }
+        
+        
+        
         
               // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -131,6 +147,10 @@ public class Login extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+                // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
