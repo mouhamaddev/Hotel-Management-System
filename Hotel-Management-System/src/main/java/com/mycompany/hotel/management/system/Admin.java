@@ -4,20 +4,24 @@
  */
 package com.mycompany.hotel.management.system;
 
-/**
- *
- * @author winte
- */
-public class Admin implements Manager{
-    
-    public void addStaff()
-    {
-        //add staff
-    }
-    public void removeStaff()
-    {
-        //remove staff
-    }
-    
-}
 
+public class Admin implements Manager {
+    public String username;
+    public String password;
+    
+    public Admin() {
+    }
+    
+    public Admin(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public void addStaff() {
+        // add staff
+    }
+
+    public void removeStaff() {
+        // remove staff
+    }
+}

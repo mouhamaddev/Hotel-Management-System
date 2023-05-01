@@ -3,8 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.hotel.management.system.gui;
+import com.mycompany.hotel.management.system.Admin;
 import com.mycompany.hotel.management.system.gui.Dashboard;
 import com.mycompany.hotel.management.system.gui.StaffList;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import com.mycompany.hotel.management.system.Admin;
+
 /**
  *
  * @author winte
@@ -127,12 +136,42 @@ public class Login extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         Object selectedValue = jComboBox1.getSelectedItem();
-        
+  
         if(selectedValue == "Admin")
         {
-            StaffList StaffListFrame = new StaffList();
-            StaffListFrame.setVisible(true);  
-            setVisible(false);
+            Admin myadmin = new Admin();
+            
+            try {
+                String conf = "C:\\Users\\winte\\Documents\\github\\Hotel-Management-System\\Hotel-Management-System\\conf.properties";
+
+                Properties prop = new Properties();
+                FileInputStream fis = new FileInputStream(conf);
+                prop.load(fis);
+
+                myadmin.username=prop.getProperty("adminUsername");
+                myadmin.password=prop.getProperty("adminPassword");
+
+
+                FileOutputStream fos = new FileOutputStream(conf);
+                prop.store(fos, "Updated properties");
+
+                fos.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            
+            if(myadmin.username == "admin" && myadmin.password == "root")
+            {
+                StaffList StaffListFrame = new StaffList();
+                StaffListFrame.setVisible(true);  
+                setVisible(false);
+            }
+            else
+            {
+                System.out.println("Wrong username or password" + myadmin.username + myadmin.password);
+            }
+            
         }
         else
         {
