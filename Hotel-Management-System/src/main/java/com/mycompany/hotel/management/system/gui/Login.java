@@ -4,6 +4,7 @@
  */
 package com.mycompany.hotel.management.system.gui;
 import com.mycompany.hotel.management.system.gui.Dashboard;
+import com.mycompany.hotel.management.system.gui.StaffList;
 /**
  *
  * @author winte
@@ -129,7 +130,9 @@ public class Login extends javax.swing.JFrame {
         
         if(selectedValue == "Admin")
         {
-            System.out.println("go to admin");
+            StaffList StaffListFrame = new StaffList();
+            StaffListFrame.setVisible(true);  
+            setVisible(false);
         }
         else
         {
@@ -137,9 +140,7 @@ public class Login extends javax.swing.JFrame {
             DashboardFrame.setVisible(true);  
             setVisible(false);
         }
-        
-        
-        
+
         
               // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
