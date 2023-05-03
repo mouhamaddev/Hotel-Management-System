@@ -21,10 +21,9 @@ class NotAvailable extends Exception
 
 class holder implements Serializable
 {
-    Doubleroom luxury_doublerrom[]=new Doubleroom[10]; //Luxury
-    Doubleroom deluxe_doublerrom[]=new Doubleroom[20]; //Deluxe
-    Singleroom luxury_singleerrom[]=new Singleroom[10]; //Luxury
-    Singleroom deluxe_singleerrom[]=new Singleroom[20]; //Deluxe
+    Room standard_singleerrom[]=new Room[10]; //Standard
+    Room luxury_singleerrom[]=new Room[10]; //Luxury
+    Room deluxe_singleerrom[]=new Room[10]; //Deluxe
 }
 
 
@@ -45,10 +44,8 @@ class write implements Runnable
         catch(Exception e)
         {
             System.out.println("Error in writing "+e);
-        }         
-        
-    }
-    
+        }           
+    }  
 }
 
 public class Main {
@@ -72,21 +69,19 @@ public class Main {
         System.out.println("\nEnter your choice :\n1.Display room availability \n2.Book\n3.Checkout\n4.Exit\n");
         ch = sc.nextInt();
         switch(ch){
-            case 1:System.out.println("\nChoose room type :\n1.Luxury Double Room \n2.Deluxe Double Room \n3.Luxury Single Room\n4.Deluxe Single Room\n");
+            case 1:System.out.println("\nChoose room type :\n1.Standard Room \n2.Luxury Room\n3.Deluxe Room\n");
                      ch2 = sc.nextInt();
                      Hotel.availability(ch2);
                 break;
-            case 2:System.out.println("\nChoose room type :\n1.Luxury Double Room \n2.Deluxe Double Room \n3.Luxury Single Room\n4.Deluxe Single Room\n");
+            case 2:System.out.println("\nChoose room type :\n1.Standard Room \n2.Luxury Room\n3.Deluxe Room\n");
                      ch2 = sc.nextInt();
                      Hotel.bookroom(ch2);                     
                 break;
             case 3:                 
                 System.out.print("Room Number -");
                      ch2 = sc.nextInt();
-                     if(ch2>60)
+                     if(ch2>40)
                          System.out.println("Room doesn't exist");
-                     else if(ch2>40)
-                         Hotel.deallocate(ch2-41,4);
                      else if(ch2>30)
                          Hotel.deallocate(ch2-31,3);
                      else if(ch2>10)
@@ -100,12 +95,12 @@ public class Main {
                 
         }
            
-            System.out.println("\nContinue : (y/n)");
+            System.out.println("\nDo you want to continue?");
             wish=sc.next().charAt(0); 
             if(!(wish=='y'||wish=='Y'||wish=='n'||wish=='N'))
             {
                 System.out.println("Invalid Option");
-                System.out.println("\nContinue : (y/n)");
+                System.out.println("\nDo you want to continue?");
                 wish=sc.next().charAt(0); 
             }
             

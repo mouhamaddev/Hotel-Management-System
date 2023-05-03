@@ -3,17 +3,17 @@ package com.mycompany.main;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-class Singleroom implements Serializable
+class Room implements Serializable
 {
     String name;
     String contact;
     String gender;   
 
-    Singleroom()
+    Room()
     {
         this.name="";
     }
-    Singleroom(String name,String contact,String gender)
+    Room(String name,String contact,String gender)
     {
         this.name=name;
         this.contact=contact;
